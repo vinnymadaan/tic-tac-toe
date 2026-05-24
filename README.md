@@ -1,16 +1,87 @@
-# React + Vite
+# Tic Tac Toe Cartoon
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A colorful two-player Tic Tac Toe game built with React, Vite, and Tailwind CSS. The app uses a playful cartoon-style interface with bold colors, chunky buttons, drop shadows, and a simple turn-based game loop.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- 3x3 Tic Tac Toe board
+- Alternating turns for players X and O
+- Winner detection across rows, columns, and diagonals
+- Draw detection when the board is full
+- Reset button to start a fresh game
+- Cartoon-inspired styling with Tailwind utility classes
+- Fast local development with Vite
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- Vite
+- Tailwind CSS
+- ESLint
 
-## Expanding the ESLint configuration
+## Project Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```text
+tic-tac-toe-cartoon/
+├── public/
+│   ├── favicon.svg
+│   └── icons.svg
+├── src/
+│   ├── assets/
+│   ├── App.jsx
+│   ├── index.css
+│   └── main.jsx
+├── eslint.config.js
+├── index.html
+├── package.json
+└── vite.config.js
+```
+
+## How It Works
+
+The main game logic lives in `src/App.jsx`.
+
+- The board is stored as an array of nine cells using React state.
+- `isXTurn` tracks which player should move next.
+- `handleClick` fills an empty square and switches turns.
+- `calculateWinner` checks all winning combinations after each move.
+- The game displays a win message, draw message, or current turn status.
+- `resetGame` clears the board and starts again with player X.
+
+Global styling is defined in `src/index.css`, including the Tailwind import, Comic Sans font stack, and warm gradient page background.
+
+## Getting Started
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the development server:
+
+```bash
+npm run dev
+```
+
+Build for production:
+
+```bash
+npm run build
+```
+
+Preview the production build:
+
+```bash
+npm run preview
+```
+
+Run linting:
+
+```bash
+npm run lint
+```
+
+## Summary
+
+This project is a small React game focused on practicing component state, event handling, conditional rendering, and basic game logic. It keeps the implementation compact while adding a fun visual style through Tailwind CSS.
